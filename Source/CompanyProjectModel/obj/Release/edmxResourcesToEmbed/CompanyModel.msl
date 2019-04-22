@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="startprojectModelStoreContainer" CdmEntityContainer="startprojectEntities">
+    <EntitySetMapping Name="T_ABOUT">
+      <EntityTypeMapping TypeName="startprojectModel.T_ABOUT">
+        <MappingFragment StoreEntitySet="T_ABOUT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_nm" ColumnName="project_nm" />
+          <ScalarProperty Name="project_desc" ColumnName="project_desc" />
+          <ScalarProperty Name="project_start" ColumnName="project_start" />
+          <ScalarProperty Name="project_end" ColumnName="project_end" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+          <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+          <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="time_span" ColumnName="time_span" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PORTFOLIO">
+      <EntityTypeMapping TypeName="startprojectModel.T_PORTFOLIO">
+        <MappingFragment StoreEntitySet="T_PORTFOLIO">
+          <ScalarProperty Name="portfolio_category" ColumnName="portfolio_category" />
+          <ScalarProperty Name="portfolio_client" ColumnName="portfolio_client" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="portfolio_nm" ColumnName="portfolio_nm" />
+          <ScalarProperty Name="portfolio_desc" ColumnName="portfolio_desc" />
+          <ScalarProperty Name="portfolio_start" ColumnName="portfolio_start" />
+          <ScalarProperty Name="portfolio_end" ColumnName="portfolio_end" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+          <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+          <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="time_span" ColumnName="time_span" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SERVICE">
+      <EntityTypeMapping TypeName="startprojectModel.T_SERVICE">
+        <MappingFragment StoreEntitySet="T_SERVICE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="service_nm" ColumnName="service_nm" />
+          <ScalarProperty Name="service_desc" ColumnName="service_desc" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+          <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+          <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="time_span" ColumnName="time_span" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_TEAM">
+      <EntityTypeMapping TypeName="startprojectModel.T_TEAM">
+        <MappingFragment StoreEntitySet="T_TEAM">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="person_nm" ColumnName="person_nm" />
+          <ScalarProperty Name="person_born" ColumnName="person_born" />
+          <ScalarProperty Name="person_address" ColumnName="person_address" />
+          <ScalarProperty Name="person_position" ColumnName="person_position" />
+          <ScalarProperty Name="person_desc" ColumnName="person_desc" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+          <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+          <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="time_span" ColumnName="time_span" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CLIENT">
+      <EntityTypeMapping TypeName="startprojectModel.T_CLIENT">
+        <MappingFragment StoreEntitySet="T_CLIENT">
+          <ScalarProperty Name="time_span" ColumnName="time_span" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+          <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+          <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="client_desc" ColumnName="client_desc" />
+          <ScalarProperty Name="client_address" ColumnName="client_address" />
+          <ScalarProperty Name="join_end" ColumnName="join_end" />
+          <ScalarProperty Name="join_start" ColumnName="join_start" />
+          <ScalarProperty Name="client_nm" ColumnName="client_nm" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SOSMED">
+      <EntityTypeMapping TypeName="startprojectModel.T_SOSMED">
+        <MappingFragment StoreEntitySet="T_SOSMED">
+          <ScalarProperty Name="time_span" ColumnName="time_span" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+          <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+          <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="sosmed_desc" ColumnName="sosmed_desc" />
+          <ScalarProperty Name="sosmed_nm" ColumnName="sosmed_nm" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_TEAM_SOSMED">
+      <EntityTypeMapping TypeName="startprojectModel.T_TEAM_SOSMED">
+        <MappingFragment StoreEntitySet="T_TEAM_SOSMED">
+          <ScalarProperty Name="time_span" ColumnName="time_span" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+          <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+          <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+          <ScalarProperty Name="sosmed_url" ColumnName="sosmed_url" />
+          <ScalarProperty Name="sosmed_id" ColumnName="sosmed_id" />
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

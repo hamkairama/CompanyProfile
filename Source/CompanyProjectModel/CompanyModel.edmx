@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="startprojectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_ABOUT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="project_nm" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="project_desc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="project_start" Type="datetime" />
+          <Property Name="project_end" Type="datetime" />
+          <Property Name="img" Type="image" />
+          <Property Name="class_prop" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_dt" Type="datetime" Nullable="false" />
+          <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="last_modified_dt" Type="datetime" />
+          <Property Name="row_status" Type="bit" Nullable="false" />
+          <Property Name="time_span" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_CLIENT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="client_nm" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="join_start" Type="datetime" />
+          <Property Name="join_end" Type="datetime" />
+          <Property Name="client_address" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="client_desc" Type="varchar" MaxLength="50" />
+          <Property Name="img" Type="image" />
+          <Property Name="class_prop" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_dt" Type="datetime" Nullable="false" />
+          <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="last_modified_dt" Type="datetime" />
+          <Property Name="row_status" Type="bit" Nullable="false" />
+          <Property Name="time_span" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_PORTFOLIO">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="portfolio_nm" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="portfolio_desc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="portfolio_start" Type="datetime" />
+          <Property Name="portfolio_end" Type="datetime" />
+          <Property Name="portfolio_client" Type="varchar" MaxLength="50" />
+          <Property Name="portfolio_category" Type="varchar" MaxLength="50" />
+          <Property Name="img" Type="image" />
+          <Property Name="class_prop" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_dt" Type="datetime" Nullable="false" />
+          <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="last_modified_dt" Type="datetime" />
+          <Property Name="row_status" Type="bit" Nullable="false" />
+          <Property Name="time_span" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SERVICE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_nm" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="service_desc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="img" Type="image" />
+          <Property Name="class_prop" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_dt" Type="datetime" Nullable="false" />
+          <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="last_modified_dt" Type="datetime" />
+          <Property Name="row_status" Type="bit" Nullable="false" />
+          <Property Name="time_span" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SOSMED">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sosmed_nm" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sosmed_desc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="img" Type="image" />
+          <Property Name="class_prop" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_dt" Type="datetime" Nullable="false" />
+          <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="last_modified_dt" Type="datetime" />
+          <Property Name="row_status" Type="bit" Nullable="false" />
+          <Property Name="time_span" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_TEAM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="person_nm" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="person_born" Type="datetime" Nullable="false" />
+          <Property Name="person_address" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="person_position" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="person_desc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="img" Type="image" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_dt" Type="datetime" Nullable="false" />
+          <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="last_modified_dt" Type="datetime" />
+          <Property Name="row_status" Type="bit" Nullable="false" />
+          <Property Name="time_span" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_TEAM_SOSMED">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="team_id" Type="int" Nullable="false" />
+          <Property Name="sosmed_id" Type="int" Nullable="false" />
+          <Property Name="sosmed_url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="class_prop" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_dt" Type="datetime" Nullable="false" />
+          <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+          <Property Name="last_modified_dt" Type="datetime" />
+          <Property Name="row_status" Type="bit" Nullable="false" />
+          <Property Name="time_span" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_T_TEAM_SOSMED_T_SOSMED">
+          <End Role="T_SOSMED" Type="Self.T_SOSMED" Multiplicity="1" />
+          <End Role="T_TEAM_SOSMED" Type="Self.T_TEAM_SOSMED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SOSMED">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_TEAM_SOSMED">
+              <PropertyRef Name="sosmed_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_TEAM_T_TEAM_SOSMED">
+          <End Role="T_TEAM" Type="Self.T_TEAM" Multiplicity="1" />
+          <End Role="T_TEAM_SOSMED" Type="Self.T_TEAM_SOSMED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_TEAM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_TEAM_SOSMED">
+              <PropertyRef Name="team_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="startprojectModelStoreContainer">
+          <EntitySet Name="T_ABOUT" EntityType="Self.T_ABOUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_CLIENT" EntityType="Self.T_CLIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_PORTFOLIO" EntityType="Self.T_PORTFOLIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SERVICE" EntityType="Self.T_SERVICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SOSMED" EntityType="Self.T_SOSMED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_TEAM" EntityType="Self.T_TEAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_TEAM_SOSMED" EntityType="Self.T_TEAM_SOSMED" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_T_TEAM_SOSMED_T_SOSMED" Association="Self.FK_T_TEAM_SOSMED_T_SOSMED">
+            <End Role="T_SOSMED" EntitySet="T_SOSMED" />
+            <End Role="T_TEAM_SOSMED" EntitySet="T_TEAM_SOSMED" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_TEAM_T_TEAM_SOSMED" Association="Self.FK_T_TEAM_T_TEAM_SOSMED">
+            <End Role="T_TEAM" EntitySet="T_TEAM" />
+            <End Role="T_TEAM_SOSMED" EntitySet="T_TEAM_SOSMED" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="startprojectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_ABOUT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="project_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="project_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="project_start" Type="DateTime" Precision="3" />
+          <Property Name="project_end" Type="DateTime" Precision="3" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="class_prop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_modified_dt" Type="DateTime" Precision="3" />
+          <Property Name="row_status" Type="Boolean" Nullable="false" />
+          <Property Name="time_span" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="T_PORTFOLIO">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="portfolio_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="portfolio_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="portfolio_start" Type="DateTime" Precision="3" />
+          <Property Name="portfolio_end" Type="DateTime" Precision="3" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="class_prop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_modified_dt" Type="DateTime" Precision="3" />
+          <Property Name="row_status" Type="Boolean" Nullable="false" />
+          <Property Name="time_span" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="portfolio_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="portfolio_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_SERVICE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="service_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="class_prop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_modified_dt" Type="DateTime" Precision="3" />
+          <Property Name="row_status" Type="Boolean" Nullable="false" />
+          <Property Name="time_span" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="T_TEAM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="person_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="person_born" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="person_address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="person_position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="person_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_modified_dt" Type="DateTime" Precision="3" />
+          <Property Name="row_status" Type="Boolean" Nullable="false" />
+          <Property Name="time_span" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="T_TEAM_SOSMED" Relationship="startprojectModel.FK_T_TEAM_T_TEAM_SOSMED" FromRole="T_TEAM" ToRole="T_TEAM_SOSMED" />
+        </EntityType>
+        <EntityContainer Name="startprojectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_ABOUT" EntityType="Self.T_ABOUT" />
+          <EntitySet Name="T_PORTFOLIO" EntityType="Self.T_PORTFOLIO" />
+          <EntitySet Name="T_SERVICE" EntityType="Self.T_SERVICE" />
+          <EntitySet Name="T_TEAM" EntityType="Self.T_TEAM" />
+          <EntitySet Name="T_CLIENT" EntityType="startprojectModel.T_CLIENT" />
+          <EntitySet Name="T_SOSMED" EntityType="startprojectModel.T_SOSMED" />
+          <EntitySet Name="T_TEAM_SOSMED" EntityType="startprojectModel.T_TEAM_SOSMED" />
+          <AssociationSet Name="FK_T_TEAM_SOSMED_T_SOSMED" Association="startprojectModel.FK_T_TEAM_SOSMED_T_SOSMED">
+            <End Role="T_SOSMED" EntitySet="T_SOSMED" />
+            <End Role="T_TEAM_SOSMED" EntitySet="T_TEAM_SOSMED" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_TEAM_T_TEAM_SOSMED" Association="startprojectModel.FK_T_TEAM_T_TEAM_SOSMED">
+            <End Role="T_TEAM" EntitySet="T_TEAM" />
+            <End Role="T_TEAM_SOSMED" EntitySet="T_TEAM_SOSMED" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_CLIENT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="client_nm" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="join_start" Type="DateTime" Precision="3" />
+          <Property Name="join_end" Type="DateTime" Precision="3" />
+          <Property Name="client_address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="client_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="class_prop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_modified_dt" Type="DateTime" Precision="3" />
+          <Property Name="row_status" Type="Boolean" Nullable="false" />
+          <Property Name="time_span" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="T_SOSMED">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sosmed_nm" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sosmed_desc" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="class_prop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_modified_dt" Type="DateTime" Precision="3" />
+          <Property Name="row_status" Type="Boolean" Nullable="false" />
+          <Property Name="time_span" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="T_TEAM_SOSMED" Relationship="startprojectModel.FK_T_TEAM_SOSMED_T_SOSMED" FromRole="T_SOSMED" ToRole="T_TEAM_SOSMED" />
+        </EntityType>
+        <EntityType Name="T_TEAM_SOSMED">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="team_id" Type="Int32" Nullable="false" />
+          <Property Name="sosmed_id" Type="Int32" Nullable="false" />
+          <Property Name="sosmed_url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="class_prop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="last_modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_modified_dt" Type="DateTime" Precision="3" />
+          <Property Name="row_status" Type="Boolean" Nullable="false" />
+          <Property Name="time_span" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="T_SOSMED" Relationship="startprojectModel.FK_T_TEAM_SOSMED_T_SOSMED" FromRole="T_TEAM_SOSMED" ToRole="T_SOSMED" />
+          <NavigationProperty Name="T_TEAM" Relationship="startprojectModel.FK_T_TEAM_T_TEAM_SOSMED" FromRole="T_TEAM_SOSMED" ToRole="T_TEAM" />
+        </EntityType>
+        <Association Name="FK_T_TEAM_SOSMED_T_SOSMED">
+          <End Type="startprojectModel.T_SOSMED" Role="T_SOSMED" Multiplicity="1" />
+          <End Type="startprojectModel.T_TEAM_SOSMED" Role="T_TEAM_SOSMED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_SOSMED">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_TEAM_SOSMED">
+              <PropertyRef Name="sosmed_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_TEAM_T_TEAM_SOSMED">
+          <End Type="startprojectModel.T_TEAM" Role="T_TEAM" Multiplicity="1" />
+          <End Type="startprojectModel.T_TEAM_SOSMED" Role="T_TEAM_SOSMED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_TEAM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="T_TEAM_SOSMED">
+              <PropertyRef Name="team_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="startprojectModelStoreContainer" CdmEntityContainer="startprojectEntities">
+          <EntitySetMapping Name="T_ABOUT">
+            <EntityTypeMapping TypeName="startprojectModel.T_ABOUT">
+              <MappingFragment StoreEntitySet="T_ABOUT">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="project_nm" ColumnName="project_nm" />
+                <ScalarProperty Name="project_desc" ColumnName="project_desc" />
+                <ScalarProperty Name="project_start" ColumnName="project_start" />
+                <ScalarProperty Name="project_end" ColumnName="project_end" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+                <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="time_span" ColumnName="time_span" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PORTFOLIO">
+            <EntityTypeMapping TypeName="startprojectModel.T_PORTFOLIO">
+              <MappingFragment StoreEntitySet="T_PORTFOLIO">
+                <ScalarProperty Name="portfolio_category" ColumnName="portfolio_category" />
+                <ScalarProperty Name="portfolio_client" ColumnName="portfolio_client" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="portfolio_nm" ColumnName="portfolio_nm" />
+                <ScalarProperty Name="portfolio_desc" ColumnName="portfolio_desc" />
+                <ScalarProperty Name="portfolio_start" ColumnName="portfolio_start" />
+                <ScalarProperty Name="portfolio_end" ColumnName="portfolio_end" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+                <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="time_span" ColumnName="time_span" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SERVICE">
+            <EntityTypeMapping TypeName="startprojectModel.T_SERVICE">
+              <MappingFragment StoreEntitySet="T_SERVICE">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="service_nm" ColumnName="service_nm" />
+                <ScalarProperty Name="service_desc" ColumnName="service_desc" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+                <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="time_span" ColumnName="time_span" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_TEAM">
+            <EntityTypeMapping TypeName="startprojectModel.T_TEAM">
+              <MappingFragment StoreEntitySet="T_TEAM">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="person_nm" ColumnName="person_nm" />
+                <ScalarProperty Name="person_born" ColumnName="person_born" />
+                <ScalarProperty Name="person_address" ColumnName="person_address" />
+                <ScalarProperty Name="person_position" ColumnName="person_position" />
+                <ScalarProperty Name="person_desc" ColumnName="person_desc" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+                <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="time_span" ColumnName="time_span" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_CLIENT">
+            <EntityTypeMapping TypeName="startprojectModel.T_CLIENT">
+              <MappingFragment StoreEntitySet="T_CLIENT">
+                <ScalarProperty Name="time_span" ColumnName="time_span" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+                <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="client_desc" ColumnName="client_desc" />
+                <ScalarProperty Name="client_address" ColumnName="client_address" />
+                <ScalarProperty Name="join_end" ColumnName="join_end" />
+                <ScalarProperty Name="join_start" ColumnName="join_start" />
+                <ScalarProperty Name="client_nm" ColumnName="client_nm" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SOSMED">
+            <EntityTypeMapping TypeName="startprojectModel.T_SOSMED">
+              <MappingFragment StoreEntitySet="T_SOSMED">
+                <ScalarProperty Name="time_span" ColumnName="time_span" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+                <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="sosmed_desc" ColumnName="sosmed_desc" />
+                <ScalarProperty Name="sosmed_nm" ColumnName="sosmed_nm" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_TEAM_SOSMED">
+            <EntityTypeMapping TypeName="startprojectModel.T_TEAM_SOSMED">
+              <MappingFragment StoreEntitySet="T_TEAM_SOSMED">
+                <ScalarProperty Name="time_span" ColumnName="time_span" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="last_modified_dt" ColumnName="last_modified_dt" />
+                <ScalarProperty Name="last_modified_by" ColumnName="last_modified_by" />
+                <ScalarProperty Name="created_dt" ColumnName="created_dt" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="class_prop" ColumnName="class_prop" />
+                <ScalarProperty Name="sosmed_url" ColumnName="sosmed_url" />
+                <ScalarProperty Name="sosmed_id" ColumnName="sosmed_id" />
+                <ScalarProperty Name="team_id" ColumnName="team_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,161 @@
+﻿@model CompanyProjectModel.T_CLIENT
+@using CompanyProjectHelper
+@using System.Globalization
+
+@if (ViewBag.msgSuccess != null)
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-check"></i>
+        </strong>
+        @ViewBag.msgSuccess
+        <br>
+    </div>
+}
+
+
+@if (ViewBag.msgError != null)
+{
+    <div class="alert alert-danger">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-times"></i>
+        </strong>
+        @ViewBag.msgError
+        <br>
+    </div>
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <h3>Are you sure you want to delete this?</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="modal-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <h4>Delete Client</h4> <input style="display:none" type="text" id="txtId" name="name" value="@Model.id" />
+                                    <hr />
+                                    <dl class="dl-horizontal">
+                                        <dt>
+                                            Client Name
+                                        </dt>
+
+                                        <dd>
+                                            @Model.client_nm
+                                        </dd>
+
+
+                                        <dt>
+                                            Start
+                                        </dt>
+
+                                        <dd>
+                                            <div align="center">
+                                                @String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", Model.join_start)
+                                            </div>
+                                        </dd>
+
+                                        <dt>
+                                            End
+                                        </dt>
+
+                                        <dd>
+                                            <div align="center">
+                                                @String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", Model.join_end)
+                                            </div>
+                                        </dd>
+
+                                        <dt>
+                                            Address
+                                        </dt>
+
+                                        <dd>
+                                            @Model.client_address
+                                        </dd>
+
+                                        <dt>
+                                            Description
+                                        </dt>
+
+                                        <dd>
+                                            @Model.client_desc
+                                        </dd>
+
+                                        <dt>
+                                            Class Property
+                                        </dt>
+
+                                        <dd>
+                                            @Model.class_prop
+                                        </dd>
+
+                                        <dt>
+                                            Img
+                                        </dt>
+
+                                        <dd>
+                                            @if (Model.img != null)
+                                            {
+                                                <img class="img-fluid d-block mx-auto" src="data:image/png;base64,@System.Convert.ToBase64String(Model.img)" />
+                                            }
+                                            else
+                                            {
+                                                <img id="txtImage" src="data:image/png;base64," style="display:none" />
+                                            }
+                                        </dd>
+
+                                        <dt>
+                                            Created By
+                                        </dt>
+
+                                        <dd>
+                                            @Model.created_by
+                                        </dd>
+
+                                        <dt>
+                                            Created Dt
+                                        </dt>
+
+                                        <dd>
+                                            <div align="center">
+                                                @String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", Model.created_dt)
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-horizontal">
+                            <div class="form-actions col-md-10">
+                                <a href="#" class="@Labels.ButtonClass("Delete")" onclick="ClientActionDelete()">
+                                    <i class="ace-icon fa fa-floppy-o bigger-125"></i>
+                                    @Labels.ButtonSaveForm("Delete")
+                                </a>
+
+                                <a href="#modalDialog" class="@Labels.ButtonClass("Back")" onclick="ModalCreate('Client/Index/', '#modalDialog')" data-toggle="modal" title="Client">
+                                    <i class="ace-icon fa fa-times red bigger-125"></i>
+                                    @Labels.ButtonCancelForm()
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

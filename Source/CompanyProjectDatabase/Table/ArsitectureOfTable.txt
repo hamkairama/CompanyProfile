@@ -1,0 +1,8 @@
+Arsitektur database
+mandatory field : id, created_by, created_dt, last_modified_by, last_modified_dt, row_status, timespan, 
+
+T_Services : service_nm, service_desc, img, class_prop,
+T_Portfolio : portfolio_nm, portfolio_desc, portfolio_start, project_end, img, vclass_prop,
+T_About : project_nm, project_desc, project_start, project_end, img, class_prop,
+T_Team : person_nm, person_born, person_address, person_position, person_desc, img,
+	Team_sosmed = team_id, sosmed_nm, sosmed_url, img, class_prop,

@@ -1,0 +1,14 @@
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\CompanyProjectHelper.dll.config
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\CompanyProjectHelper.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\CompanyProjectHelper.pdb
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\CompanyProjectModel.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\EntityFramework.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\EntityFramework.SqlServer.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\System.Web.Mvc.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\CompanyProjectModel.pdb
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\EntityFramework.xml
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\EntityFramework.SqlServer.xml
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\bin\Release\System.Web.Mvc.xml
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\obj\Release\CompanyProjectHelper.csprojResolveAssemblyReference.cache
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\obj\Release\CompanyProjectHelper.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectHelper\obj\Release\CompanyProjectHelper.pdb

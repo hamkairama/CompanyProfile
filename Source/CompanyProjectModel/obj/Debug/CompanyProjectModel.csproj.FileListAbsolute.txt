@@ -1,0 +1,10 @@
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Debug\CompanyProjectModel.dll.config
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Debug\CompanyProjectModel.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Debug\CompanyProjectModel.pdb
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Debug\EntityFramework.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Debug\EntityFramework.xml
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\obj\Debug\CompanyProjectModel.csprojResolveAssemblyReference.cache
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\obj\Debug\CompanyProjectModel.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\obj\Debug\CompanyProjectModel.pdb

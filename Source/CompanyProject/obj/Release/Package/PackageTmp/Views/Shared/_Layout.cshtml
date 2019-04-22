@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <title>Build Persada</title>
+    @*@Styles.Render("~/bundles/custom/css")*@
+    <link href="~/Custom/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Custom/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Custom/css/agency.min.css" rel="stylesheet" />
+    <link href="~/Custom/css/ace.css" rel="stylesheet" />
+    <link href="~/Custom/css/datepicker.css" rel="stylesheet" />
+
+    <style>
+        .required:after {
+            color: #e32;
+            content: ' *';
+            display: inline;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <!-- Navigation -->
+    @Html.Partial("_MenuNavigation")
+
+    <!-- Header -->
+    @Html.Partial("_Header")
+
+    <!-- Services -->
+    @Html.Partial("_Services")
+
+    <!-- Portfolio Grid -->
+    @Html.Partial("_Portfolio")
+
+    <!-- About -->
+    @Html.Partial("_About")
+
+    <!-- Team -->
+    @Html.Partial("_Team")
+
+    <!-- Clients -->
+    @Html.Partial("_Clients")
+
+    <!-- Contact -->
+    @Html.Partial("_Contact")
+
+    <!-- Footer -->
+    @Html.Partial("_Footer")
+
+    <!-- Portfolio Modals -->
+    @Html.Partial("_Modals")
+
+    <div class="container body-content">
+        <section id="setup">
+            @RenderBody()
+        </section>
+        <div class="portfolio-modal modal fade" id="modalDialog" tabindex="-1" role="dialog" aria-hidden="true"></div>
+        <hr />
+    </div>
+
+
+
+    @*@Scripts.Render("~/bundles/custom/js")*@
+    <script src="~/Custom/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Custom/js/jquery-ui.js"></script>
+    <script src="~/Custom/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Custom/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Custom/js/jqBootstrapValidation.js"></script>
+    <script src="~/Custom/js/contact_me.js"></script>
+    <script src="~/Custom/js/agency.js"></script>
+    <script src="~/Custom/js/bootstrap-datepicker.js"></script>
+
+    <script src="~/Scripts/Helpers/Modal.js"></script>
+    <script src="~/Scripts/Helpers/Common.js"></script>
+    <script src="~/Scripts/Helpers/ResultStatus.js"></script>
+
+    <script src="~/Scripts/Controller/LoginController.js"></script>
+    <script src="~/Scripts/Controller/TeamController.js"></script>
+    <script src="~/Scripts/Controller/ServiceController.js"></script>
+    <script src="~/Scripts/Controller/PortfolioController.js"></script>
+    <script src="~/Scripts/Controller/AboutController.js"></script>
+    <script src="~/Scripts/Controller/ClientController.js"></script>
+    <script src="~/Scripts/Controller/ContactController.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

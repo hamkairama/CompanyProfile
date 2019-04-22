@@ -1,0 +1,128 @@
+﻿@model CompanyProjectModel.T_PORTFOLIO
+@using CompanyProjectHelper
+@using System.Globalization
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="modal-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <h4>Detail Team</h4>
+                                    <hr />
+                                    <dl class="dl-horizontal">
+                                        <dt>
+                                            Portfolio Name
+                                        </dt>
+
+                                        <dd>
+                                            @Model.portfolio_nm
+                                        </dd>
+
+                                        <dt>
+                                            Client
+                                        </dt>
+
+                                        <dd>
+                                            @Model.portfolio_client
+                                        </dd>
+
+                                        <dt>
+                                            Category
+                                        </dt>
+
+                                        <dd>
+                                            @Model.portfolio_category
+                                        </dd>
+
+                                        <dt>
+                                            Description
+                                        </dt>
+
+                                        <dd>
+                                            @Model.portfolio_desc
+                                        </dd>
+
+
+                                        <dt>
+                                            Start
+                                        </dt>
+
+                                        <dd>
+                                            <div align="center">
+                                                @String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", Model.portfolio_start)
+                                            </div>
+                                        </dd>
+
+                                        <dt>
+                                            End
+                                        </dt>
+
+                                        <dd>
+                                            <div align="center">
+                                                @String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", Model.portfolio_end)
+                                            </div>
+                                        </dd>
+
+                                        <dt>
+                                            Class Property
+                                        </dt>
+
+                                        <dd>
+                                            @Model.class_prop
+                                        </dd>
+
+                                        <dt>
+                                            Img
+                                        </dt>
+
+                                        <dd>
+                                            @if (Model.img != null)
+                                            {
+                                                <img class="img-fluid d-block mx-auto" src="data:image/png;base64,@System.Convert.ToBase64String(Model.img)" />
+                                            }
+                                            else
+                                            {
+                                                <img id="txtImage" src="data:image/png;base64," style="display:none" />
+                                            }
+                                        </dd>
+
+                                        <dt>
+                                            Created By
+                                        </dt>
+
+                                        <dd>
+                                            @Model.created_by
+                                        </dd>
+
+                                        <dt>
+                                            Created Dt
+                                        </dt>
+
+                                        <dd>
+                                            <div align="center">
+                                                @String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", Model.created_dt)
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-horizontal">
+                            <div class="form-actions col-md-10">
+                                <a href="#modalDialog" class="@Labels.ButtonClass("Back")" onclick="ModalCreate('Portfolio/Index/', '#modalDialog')" data-toggle="modal" title="Portfolio">
+                                    <i class="ace-icon fa fa-times red bigger-125"></i>
+                                    @Labels.ButtonCancelForm()
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

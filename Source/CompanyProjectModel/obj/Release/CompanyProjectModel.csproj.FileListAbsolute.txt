@@ -1,0 +1,9 @@
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Release\CompanyProjectModel.dll.config
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Release\CompanyProjectModel.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Release\CompanyProjectModel.pdb
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Release\EntityFramework.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Release\EntityFramework.SqlServer.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Release\EntityFramework.xml
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\bin\Release\EntityFramework.SqlServer.xml
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\obj\Release\CompanyProjectModel.dll
+D:\Hamka\GitHub\eComProject\CompanyProject\CompanyProjectModel\obj\Release\CompanyProjectModel.pdb

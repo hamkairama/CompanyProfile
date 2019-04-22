@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3c9aa63734cf44e78811fb5eb1b5aaae" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="startprojectModel.T_ABOUT" Width="1.5" PointX="5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="startprojectModel.T_PORTFOLIO" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="startprojectModel.T_SERVICE" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="startprojectModel.T_TEAM" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="startprojectModel.T_CLIENT" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="startprojectModel.T_SOSMED" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="startprojectModel.T_TEAM_SOSMED" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="startprojectModel.FK_T_TEAM_SOSMED_T_SOSMED" />
+        <AssociationConnector Association="startprojectModel.FK_T_TEAM_T_TEAM_SOSMED" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

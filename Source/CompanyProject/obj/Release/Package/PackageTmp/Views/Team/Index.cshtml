@@ -1,0 +1,158 @@
+﻿@model IEnumerable<CompanyProjectModel.T_TEAM>
+@using CompanyProjectHelper
+@using System.Globalization
+
+
+@if (ViewBag.msgSuccess != null)
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+
+        <strong>
+            <i class="ace-icon fa fa-check"></i>
+        </strong>
+        @ViewBag.msgSuccess
+        <br>
+    </div>
+}
+
+@if (ViewBag.msgError != null)
+{
+    <div class="alert alert-danger">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-times"></i>
+        </strong>
+        @ViewBag.msgError
+        <br>
+    </div>
+} 
+
+<div class="main-container" id="main-container" style="font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px; font-weight:normal">
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="page-content">
+
+                <div class="row">
+                    <div class="col-lg-12  mx-auto">
+                        <div class="row">
+                            <div class="col-lg-12  mx-auto">
+                                <h3 class="header smaller lighter blue">Team Application</h3>
+
+                                <div class="clearfix">
+                                    <div class="pull-right tableTools-container">
+                                        <button title="Export to xls" class="btn btn-white btn-info btn-bold" id="export" onClick="fnExcelReport('export', 'dynamic-table', 'Level')">
+                                            <span>
+                                                <i class="fa fa-file-excel-o bigger-110 green"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="table-header">
+                                    <a class="@Labels.ButtonClass("Create")" href="#modalDialog" onclick="ModalCreate('Team/Create/','#modalDialog')" data-toggle="modal" title="Create">
+                                        <i class="ace-icon fa fa-pencil success bigger-125"></i>
+                                        @Labels.ButtonSaveForm("Create")
+                                    </a>
+                                </div>
+
+                                <div class="form-horizontal">
+                                    <table id="dynamic-table" class="table table-striped table-bordered table-hover table-scroll">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Name
+                                                </th>
+                                                <th>
+                                                    Born
+                                                </th>
+                                                <th class="hidden-480">
+                                                    Address
+                                                </th>
+                                                <th>
+                                                    Position
+                                                </th>
+                                                <th class="hidden-480">
+                                                    Desc
+                                                </th>
+                                                <th class="hidden-480">
+                                                    Created By
+                                                </th>
+                                                <th class="hidden-480">
+                                                    Created Dt
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.person_nm)
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            @String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", item.person_born)
+                                                        </div>
+                                                    </td>
+                                                    <td class="hidden-480">
+                                                        @Html.DisplayFor(modelItem => item.person_address)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.person_position)
+                                                    </td>
+                                                    <td class="hidden-480">
+                                                        @Html.DisplayFor(modelItem => item.person_desc)
+                                                    </td>
+                                                    <td class="hidden-480">
+                                                        @Html.DisplayFor(modelItem => item.created_by)
+                                                    </td>
+                                                    <td class="hidden-480">
+                                                        @Html.DisplayFor(modelItem => item.created_dt)
+                                                    </td>
+
+                                                    <td class="td-actions">
+                                                        <div class="action-buttons">
+                                                            <a class="blue" href="#modalDialog" onclick="Modal('Team/Details/','@item.id','#modalDialog')" data-toggle="modal" title="View">
+                                                                @Html.Raw(Labels.IconAction("Detail"))
+                                                            </a>
+
+                                                            <a class="green" href="#modalDialog" onclick="Modal('Team/Edit/','@item.id','#modalDialog')" data-toggle="modal" title="Edit">
+                                                                @Html.Raw(Labels.IconAction("Edit"))
+                                                            </a>
+
+                                                            <a class="red" href="#modalDialog" onclick="Modal('Team/Delete/','@item.id','#modalDialog')" data-toggle="modal" title="Delete">
+                                                                @Html.Raw(Labels.IconAction("Delete"))
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="form-horizontal">
+                                    <div class="form-actions col-md-12 mx-auto center-block">
+                                        <a href="@Url.Action("Index", "Home")" class="@Labels.ButtonClass("Back")">
+                                            <i class="ace-icon fa fa-times red bigger-125"></i>
+                                            @Labels.ButtonCancelForm()
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,138 @@
+﻿@model CompanyProjectModel.T_ABOUT
+@using CompanyProjectHelper
+
+
+<style>
+    .date-picker[readonly] {
+        background-color: #fff !important;
+        cursor: text;
+    }
+</style>
+
+@if (ViewBag.msgSuccess != null)
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-check"></i>
+        </strong>
+        @ViewBag.msgSuccess
+        <br>
+    </div>
+}
+
+
+@if (ViewBag.msgError != null)
+{
+    <div class="alert alert-danger">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-times"></i>
+        </strong>
+        @ViewBag.msgError
+        <br>
+    </div>
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="modal-body text-md-center">
+
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <h4>Create About</h4>
+                                    <hr />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <span class="required">Project Name</span>
+                                    <input type="text" class="form-control item-required text-center" id="txtProjectName" />
+                                    <label id="required_txtProjectName" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <span class="required">Description</span>
+                                    <input type="text" class="form-control item-required text-center" id="txtDesc" />
+                                    <label id="required_txtDesc" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-10 col-sm-11">
+                                <span class="required">Start Date</span>
+                                <div class="input-group">
+                                    <input class="form-control date-picker text-center" id="txtStart" type="text">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar bigger-110"></i>
+                                    </span>
+                                    <label id="required_txtStart" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-10 col-sm-11">
+                                <span class="required">End Date</span>
+                                <div class="input-group">
+                                    <input class="form-control date-picker text-center" id="txtEnd" type="text">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar bigger-110"></i>
+                                    </span>
+                                    <label id="required_txtEnd" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <span class="required">Class Property</span>
+                                    <input type="text" class="form-control item-required text-center" id="txtClassProp" />
+                                    <label id="required_txtClassProp" style="display:none"></label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <img id="txtImage" src="data:image/png;base64," style="display:none" />
+                                    <a href="#" id="btnBrowse" onclick="GetFile()" class="btn btn-sm btn-white btn-default btn-round">@Labels.ButtonBrowseFile()</a>
+                                    <input type="file" id="postedFile" style="display:none" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-horizontal">
+                            <div class="form-actions col-md-10">
+                                <a href="#" class="@Labels.ButtonClass("Create")" onclick="AboutActionCreate()">
+                                    <i class="ace-icon fa fa-floppy-o bigger-125"></i>
+                                    @Labels.ButtonSaveForm("Create")
+                                </a>
+                                <a href="#modalDialog" class="@Labels.ButtonClass("Back")" onclick="ModalCreate('About/Index/', '#modalDialog')" data-toggle="modal" title="About">
+                                    <i class="ace-icon fa fa-times red bigger-125"></i>
+                                    @Labels.ButtonCancelForm()
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.date-picker').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        })
+    })
+</script>

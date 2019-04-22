@@ -1,0 +1,62 @@
+/****** Object:  Table [dbo].[T_TEAM_SOSMED]    Script Date: 01/25/2018 23:02:14 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_TEAM_SOSMED]') AND type in (N'U'))
+DROP TABLE [dbo].[T_TEAM_SOSMED]
+GO
+
+/****** Object:  Table [dbo].[T_TEAM_SOSMED]    Script Date: 01/25/2018 23:02:25 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[T_TEAM_SOSMED](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[team_id] [int] NOT NULL,
+	[sosmed_id] [int] NOT NULL,
+	[sosmed_url] [varchar](200) NOT NULL,
+	[class_prop] [varchar](50) NULL,
+	[created_by] [varchar](50) NOT NULL,
+	[created_dt] [datetime] NOT NULL,
+	[last_modified_by] [varchar](50) NULL,
+	[last_modified_dt] [datetime] NULL,
+	[row_status] [bit] NOT NULL,
+	[time_span] [time](7) NOT NULL,
+ CONSTRAINT [PK_T_TEAM_SOSMED] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[T_TEAM_SOSMED]  WITH CHECK ADD  CONSTRAINT [FK_T_TEAM_SOSMED_T_SOSMED] FOREIGN KEY([sosmed_id])
+REFERENCES [dbo].[T_SOSMED] ([id])
+GO
+
+ALTER TABLE [dbo].[T_TEAM_SOSMED] CHECK CONSTRAINT [FK_T_TEAM_SOSMED_T_SOSMED]
+GO
+
+ALTER TABLE [dbo].[T_TEAM_SOSMED]  WITH CHECK ADD  CONSTRAINT [FK_T_TEAM_T_TEAM_SOSMED] FOREIGN KEY([team_id])
+REFERENCES [dbo].[T_TEAM] ([id])
+GO
+
+ALTER TABLE [dbo].[T_TEAM_SOSMED] CHECK CONSTRAINT [FK_T_TEAM_T_TEAM_SOSMED]
+GO
+
+ALTER TABLE [dbo].[T_TEAM_SOSMED] ADD  CONSTRAINT [DF_T_TEAM_SOSMED_C_DT]  DEFAULT (getdate()) FOR [created_dt]
+GO
+
+ALTER TABLE [dbo].[T_TEAM_SOSMED] ADD  CONSTRAINT [DF_T_TEAM_SOSMED_R_S]  DEFAULT ((0)) FOR [row_status]
+GO
+
+ALTER TABLE [dbo].[T_TEAM_SOSMED] ADD  CONSTRAINT [DF_T_TEAM_SOSMED_T_S]  DEFAULT (getdate()) FOR [time_span]
+GO
+
+

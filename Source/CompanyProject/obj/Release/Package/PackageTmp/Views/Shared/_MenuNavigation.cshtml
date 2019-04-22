@@ -1,0 +1,67 @@
+﻿@using CompanyProjectHelper
+
+<link href="~/Custom/css/setup.css" rel="stylesheet" />
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Build Persada</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        @if (Session["admin"] != null)
+        {
+            <div class="dropdown-c" id="loginArea">
+                <a class="nav-link js-scroll-trigger dropbtn-c " href="#header">SETUP</a>
+                <div class="dropdown-content-c">
+                    <a href="#modalDialog" onclick="ModalCreate('Service/Index/', '#modalDialog')" data-toggle="modal" title="Service">
+                        Service
+                    </a>
+                    <a href="#modalDialog" onclick="ModalCreate('Portfolio/Index/', '#modalDialog')" data-toggle="modal" title="Portfolio">
+                        Portfolio
+                    </a>
+                    <a href="#modalDialog" onclick="ModalCreate('About/Index/', '#modalDialog')" data-toggle="modal" title="About">
+                        About
+                    </a>
+                    <a href="#modalDialog" onclick="ModalCreate('Team/Index/', '#modalDialog')" data-toggle="modal" title="Team">
+                        Team
+                    </a>
+                    <a href="#modalDialog" onclick="ModalCreate('Client/Index/', '#modalDialog')" data-toggle="modal" title="Client">
+                        Client
+                    </a>
+                </div>
+            </div>
+        }
+
+        <div class="dropdown-c">
+            <a class="nav-link js-scroll-trigger dropbtn-c " href="#header">LOGIN</a>
+            <div class="dropdown-content-c">
+                <input type="text" class="form-control item-required" placeholder="userid" id="txtUserId" onkeypress="OnKeyPress(event)" />
+                <label id="required_txtUserId" style="display:none"></label>
+                <input type="password" class="form-control item-required" placeholder="password" id="txtPassword" onkeypress="OnKeyPress(event)" />
+                <label id="required_txtPassword" style="display:none"></label>
+                <a href="#" onclick="LoginActionLogin()" class="btn btn-success btn-small">@Labels.ButtonLabels("Login")</a>
+                <label id="required_txtLoginValidation" style="display:none"></label>
+            </div>
+        </div>
+    </div>
+</nav>
+

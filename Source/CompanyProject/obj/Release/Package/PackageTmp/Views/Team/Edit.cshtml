@@ -1,0 +1,151 @@
+﻿@model CompanyProjectModel.T_TEAM
+@using CompanyProjectHelper
+@using System.Globalization
+
+
+<style>
+    .date-picker[readonly] {
+        background-color: #fff !important;
+        cursor: text;
+    }
+</style>
+
+@if (ViewBag.msgSuccess != null)
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-check"></i>
+        </strong>
+        @ViewBag.msgSuccess
+        <br>
+    </div>
+}
+
+
+@if (ViewBag.msgError != null)
+{
+    <div class="alert alert-danger">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-times"></i>
+        </strong>
+        @ViewBag.msgError
+        <br>
+    </div>
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="modal-body text-md-center">
+
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <h4>Edit Team</h4>
+                                    <hr />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <span class="required">Name</span>
+                                    <input type="text" class="form-control item-required text-center" id="txtName" value="@Model.person_nm" />
+                                    <label id="required_txtName" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-10 col-sm-11">
+                                <span class="required">Born</span>
+                                <div class="input-group">
+                                    <input class="form-control date-picker text-center" id="txtBorn" type="text" value="@String.Format(CultureInfo.CreateSpecificCulture("en-EN"), "{0:dd-MMM-yyyy}", Model.person_born)">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar bigger-110"></i>
+                                    </span>
+                                    <label id="required_txtBorn" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <span class="required">Address</span>
+                                    <input type="text" class="form-control item-required text-center" id="txtAddress" value="@Model.person_address" />
+                                    <label id="required_txtAddress" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <span class="required">Position</span>
+                                    <input type="text" class="form-control item-required text-center" id="txtPosition" value="@Model.person_position" />
+                                    <label id="required_txtPosition" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <span class="required">Description</span>
+                                    <input type="text" class="form-control item-required text-center" id="txtDescription" value="@Model.person_desc" />
+                                    <label id="required_txtDescription" style="display:none"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    @if (Model.img != null)
+                                    {
+                                        <img id="txtImage" class="img-fluid d-block mx-auto" src="data:image/png;base64,@System.Convert.ToBase64String(Model.img)" />
+                                    }
+                                    else
+                                    {
+                                        <img id="txtImage" src="data:image/png;base64," style="display:none" />
+                                    }
+                                    <a href="#" id="btnBrowse" onclick="GetFile()" class="btn btn-sm btn-white btn-default btn-round">@Labels.ButtonBrowseFile()</a>
+                                    <input type="file" id="postedFile" style="display:none" />
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="display:none">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control text-center" id="txtId" value="@Model.id" />
+                                    <input type="text" class="form-control text-center" id="txtCreatedBy" value="@Model.created_by" />
+                                    <input type="text" class="form-control text-center" id="txtCreatedDt" value="@Model.created_dt" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-horizontal">
+                            <div class="form-actions col-md-10">
+                                <a href="#" class="@Labels.ButtonClass("Edit")" onclick="TeamActionEdit()">
+                                    <i class="ace-icon fa fa-floppy-o bigger-125"></i>
+                                    @Labels.ButtonSaveForm("Edit")
+                                </a>
+                                <a href="#modalDialog" class="@Labels.ButtonClass("Back")" onclick="ModalCreate('Team/Index/', '#modalDialog')" data-toggle="modal" title="Team">
+                                    <i class="ace-icon fa fa-times red bigger-125"></i>
+                                    @Labels.ButtonCancelForm()
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.date-picker').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        })
+    })
+</script>

@@ -1,0 +1,60 @@
+﻿@using CompanyProjectModel;
+@using CompanyProjectHelper;
+
+@if (ViewBag.DataTeam != null)
+{
+
+    <section class="bg-light" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (T_TEAM team in ViewBag.DataTeam)
+                {
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            @if (team.img != null)
+                            {
+                                <img class="mx-auto rounded-circle" src="data:image/png;base64,@System.Convert.ToBase64String(team.img)" />
+                            }
+                            else
+                            {
+                                <img class="mx-auto rounded-circle" src="data:image/png;base64," />
+                            }
+                            <h4>@team.person_nm</h4>
+                            <p class="text-muted">@team.person_position</p>
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">We are proud to be part of the project of a dream you are building. Smile is our characteristic and commitment is our promise. Together we can</p>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
